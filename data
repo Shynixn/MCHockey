@@ -1,0 +1,26 @@
+        val hockey = arrayOfNulls<Item?>(36)
+        for (i in 0 until 9) {
+            hockey[i] = Item("minecraft:iron_hoe,292")
+        }
+        arena.meta.redTeamMeta.inventory = hockey.map { e -> itemService.serializeItem(e) }.toTypedArray()
+        arena.meta.blueTeamMeta.inventory = hockey.map { e -> itemService.serializeItem(e) }.toTypedArray()
+
+
+            arena.meta.ballMeta.also {
+                it.size = BallSize.SMALL
+                it.item.skinBase64 =
+                    "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMmE1MmQ1NzlhZmUyZmRmN2I4ZWNmYTc0NmNkMDE2MTUwZDk2YmViNzUwMDliYjI3MzNhZGUxNWQ0ODdjNDJhMSJ9fX0="
+                it.kickPassDelay = 0
+                it.rotating = false
+                it.enabledInteract = false
+                it.hitBoxRelocation = -0.2
+                it.movementModifier.rollingResistance = 0.04
+                it.movementModifier.shotPassYVelocityOverwrite = 0.0
+                it.soundEffects[BallActionType.ONKICK]!!.pitch = 2.0
+            }
+            val hockey = arrayOfNulls<Item?>(36)
+            for (i in 0 until 9) {
+                hockey[i] = Item("minecraft:iron_hoe,292")
+            }
+            arena.meta.redTeamMeta.inventory = hockey.map { e -> itemService.serializeItem(e) }.toTypedArray()
+            arena.meta.blueTeamMeta.inventory = hockey.map { e -> itemService.serializeItem(e) }.toTypedArray()

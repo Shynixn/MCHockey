@@ -1,0 +1,51 @@
+name: MCHockey
+
+permissions:
+  contents: write
+
+# Controls when the action will run.
+on:
+  # Triggers the workflow on push or pull request events but only for the master branch
+  push:
+    branches: [ main, development ]
+  pull_request:
+    branches: [ main, development ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  Wiki:
+    runs-on: ubuntu-latest
+    if: "contains(github.ref, 'main')"
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: true
+      - uses: actions/setup-java@v1
+        with:
+          java-version: '8'
+      - uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+          architecture: 'x64'
+
+      - name: Build Documentation
+        run: |
+          sudo apt-get install -y mkdocs
+          pip install mkdocs-material
+          pip install Pygments
+          git config --global user.email "shynixn@email.com" && git config --global user.name "Shynixn CI Actions"
+          rm -rf docs/wiki/site
+          cd docs/wiki
+          mkdocs build
+          cd ..
+          cd ..
+          git add docs
+          git commit --message "Automatic CI Documentation."
+          git push --quiet https://Shynixn:${{ secrets.GITHUB_TOKEN }}@github.com/Shynixn/MCHockey.git HEAD:main
+
+
+
+
