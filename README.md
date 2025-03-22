@@ -1,10 +1,10 @@
 # MCHockey
 
 
-| branch        | status        |  download |
-| ------------- | ------------- |   ---------| 
-| master        | [![Build Status](https://github.com/Shynixn/MCHockey/workflows/CI/badge.svg?branch=master)](https://github.com/Shynixn/MCHockey/actions)   |[Download latest release](https://github.com/Shynixn/MCHockey/releases)|
-| development        | [![Build Status](https://github.com/Shynixn/MCHockey/workflows/CI/badge.svg?branch=master)](https://github.com/Shynixn/MCHockey/actions)   ||
+| branch        | status                                                                                                                                                      |  download |
+| ------------- |-------------------------------------------------------------------------------------------------------------------------------------------------------------|   ---------| 
+| master        | [![Build Status](https://github.com/Shynixn/MCHockey/actions/workflows/main.yml/badge.svg?branch=main)](https://github.com/Shynixn/MCHockey/actions)        |[Download latest release](https://github.com/Shynixn/MCHockey/releases)|
+| development        | [![Build Status](https://github.com/Shynixn/MCHockey/actions/workflows/main.yml/badge.svg?branch=development)](https://github.com/Shynixn/MCHockey/actions) ||
 
 ## Description
 
