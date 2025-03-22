@@ -5,11 +5,11 @@ function Invoke-Name-Patch{
     Get-ChildItem -Path $rootPath -Recurse -File | Where-Object { $extensions -contains $_.Extension } | ForEach-Object {
         $filePath = $_.FullName
         $data = Get-Content -Path $filePath -Raw
-        $data = $data.Replace("blockball", "mchockey").replace("BlockBall", "MCHockey")
+        $data = $data.Replace("blockball", "mchockey").replace("BlockBall", "MCHockey").replace("Soccer", "Hockey")
         Set-Content -Value $data -Path $filePath
 
         $relativePath = $filePath.Substring($rootPath.Length).TrimStart("\\")
-        $newRelativePath = $relativePath.Replace("blockball", "mchockey").replace("BlockBall", "MCHockey")
+        $newRelativePath = $relativePath.Replace("blockball", "mchockey").replace("BlockBall", "MCHockey").replace("Soccer", "Hockey")
         $fullNewPath = "$PSScriptRoot\$newRelativePath"
 
         $fileDirectory = [System.IO.Path]::GetDirectoryName($fullNewPath )
