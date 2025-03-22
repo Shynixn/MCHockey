@@ -37,7 +37,7 @@ jobs:
           cd blockball
           dos2unix BlockBallCommandExecutor.ArenaCreation.patch
           git apply BlockBallCommandExecutor.ArenaCreation.patch
-          pwsh patches\patch.ps1
+          pwsh patch.ps1
           cd -
 
       - name: Build Java Application
