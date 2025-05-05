@@ -10,3 +10,9 @@ git diff > plugin.primary.patch
 ```
 git apply BlockBallCommandExecutor.ArenaCreation.patch
 ```
+
+### Pull with submodules
+
+```
+git pull --recurse-submodules
+```
