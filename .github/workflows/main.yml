@@ -33,11 +33,12 @@ jobs:
 
       - name: Patch BlockBall to MCHockey
         run: |
-          cp -r ./patches/* ./blockball/
+          cp ./patch/main.patch ./blockball/main.patch 
+          cp ./patch/rename.ps1 ./blockball/rename.ps1
           cd blockball
-          dos2unix *.patch
-          git apply *.patch
-          pwsh patch.ps1
+          dos2unix main.patch 
+          git apply main.patch 
+          pwsh rename.ps1
           cd -
 
       - name: Build Java Application

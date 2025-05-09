@@ -1,14 +1,15 @@
 # Patches
 
 ### How to create a patch
+
 ```
-cd blockball
-git diff > plugin.primary.patch
+VCS/Git/Create Patch
 ```
+
 ### How to apply a patch 
 
 ```
-git apply BlockBallCommandExecutor.ArenaCreation.patch
+VCS/Git/Apply Patch
 ```
 
 ### Update submodule.
