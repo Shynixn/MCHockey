@@ -12,6 +12,10 @@ VCS/Git/Create Patch
 VCS/Git/Apply Patch
 ```
 
+```
+git apply main.patch
+```
+
 ### Update submodule.
 
 ```
