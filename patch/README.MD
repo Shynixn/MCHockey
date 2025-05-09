@@ -8,12 +8,13 @@ VCS/Git/Create Patch
 
 ### How to apply a patch 
 
+IntelliJ
 ```
 VCS/Git/Apply Patch
 ```
 
 ```
-git apply main.patch
+git apply main.patch 
 ```
 
 ### Update submodule.
