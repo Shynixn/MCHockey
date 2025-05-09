@@ -7,7 +7,7 @@ Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 ===================================================================
 diff --git a/src/main/resources/config.yml b/src/main/resources/config.yml
 --- a/src/main/resources/config.yml	(revision 1150f0584a68092a92d9046b8b5e86a3d19d143d)
-+++ b/src/main/resources/config.yml	(date 1746472322260)
++++ b/src/main/resources/config.yml	(date 1746803666287)
 @@ -15,15 +15,12 @@
    blockball:
      aliases:
@@ -31,8 +31,8 @@ Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 ===================================================================
 diff --git a/src/main/java/com/github/shynixn/blockball/impl/commandexecutor/BlockBallCommandExecutor.kt b/src/main/java/com/github/shynixn/blockball/impl/commandexecutor/BlockBallCommandExecutor.kt
 --- a/src/main/java/com/github/shynixn/blockball/impl/commandexecutor/BlockBallCommandExecutor.kt	(revision 1150f0584a68092a92d9046b8b5e86a3d19d143d)
-+++ b/src/main/java/com/github/shynixn/blockball/impl/commandexecutor/BlockBallCommandExecutor.kt	(date 1746472440435)
-@@ -662,6 +662,24 @@
++++ b/src/main/java/com/github/shynixn/blockball/impl/commandexecutor/BlockBallCommandExecutor.kt	(date 1746803711263)
+@@ -662,6 +662,26 @@
          arena.meta.redTeamMeta.armor = mapItemsToColoredSerializedItems(items, "16711680")
          arena.meta.blueTeamMeta.armor = mapItemsToColoredSerializedItems(items, "255")
          arena.meta.refereeTeamMeta.armor = mapItemsToColoredSerializedItems(items, "16777215")
@@ -44,6 +44,7 @@ diff --git a/src/main/java/com/github/shynixn/blockball/impl/commandexecutor/Blo
 +            it.rotating = false
 +            it.enabledInteract = false
 +            it.hitBoxRelocation = -0.2
++            it.enabledPass = false
 +            it.movementModifier.rollingResistance = 0.04
 +            it.movementModifier.shotPassYVelocityOverwrite = 0.0
 +            it.soundEffects[BallActionType.ONKICK]!!.pitch = 2.0
@@ -54,6 +55,7 @@ diff --git a/src/main/java/com/github/shynixn/blockball/impl/commandexecutor/Blo
 +        }
 +        arena.meta.redTeamMeta.inventory = hockey.map { e -> itemService.serializeItem(e) }.toTypedArray()
 +        arena.meta.blueTeamMeta.inventory = hockey.map { e -> itemService.serializeItem(e) }.toTypedArray()
++        arena.meta.customizingMeta.ignoreGoalSize = true
  
          arenaRepository.save(arena)
          sender.sendPluginMessage(language.gameCreatedMessage, name)

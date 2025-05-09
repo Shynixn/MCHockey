@@ -111,21 +111,34 @@ jobs:
           python-version: '3.x'
           architecture: 'x64'
 
-      - name: Build Documentation
+      - name: Install Libraries
         run: |
+          sudo apt-get install -y dos2unix
           sudo apt-get install -y mkdocs
           pip install mkdocs-material
           pip install Pygments
-          git config --global user.email "shynixn@email.com" && git config --global user.name "Shynixn CI Actions"
-          rm -rf docs/wiki/site
+
+      - name: Patch BlockBall to MCHockey
+        run: |
+          cp ./patch/main.patch ./blockball/main.patch 
+          cp ./patch/rename.ps1 ./blockball/rename.ps1
+          cd blockball
+          dos2unix main.patch 
+          git apply main.patch 
+          pwsh rename.ps1
+          cd -
+
+      - name: Build Documentation
+        run: |
+          rm -rf docs
+          cd blockball
+          git config --global user.email "shynixn@email.com" && git config --global user.name "Shynixn CI Actions"        
           cd docs/wiki
           mkdocs build
-          cd ..
-          cd ..
+          cd -
+          cd -
+          mkdir -p docs/wiki
+          cp -rf ./blockball/docs/wiki/* ./docs/wiki/
           git add docs
           git commit --message "Automatic CI Documentation." | echo "Nothing to commit"
           git push --quiet https://Shynixn:${{ secrets.GITHUB_TOKEN }}@github.com/Shynixn/MCHockey.git HEAD:main | echo "Nothing to commit"
-
-
-
-
