@@ -103,6 +103,8 @@ jobs:
     if: "contains(github.ref, 'main')"
     steps:
       - uses: actions/checkout@v4
+        with:
+          submodules: true
       - uses: actions/setup-java@v1
         with:
           java-version: '8'
