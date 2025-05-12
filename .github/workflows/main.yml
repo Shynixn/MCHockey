@@ -144,4 +144,4 @@ jobs:
           git add docs
           git commit --message "Automatic CI Documentation." | echo "Nothing to commit"
           git pull
-          git push --quiet https://Shynixn:${{ secrets.GITHUB_TOKEN }}@github.com/Shynixn/MCHockey.git HEAD:main | echo "Nothing to commit"
+          git push --quiet --force https://Shynixn:${{ secrets.GITHUB_TOKEN }}@github.com/Shynixn/MCHockey.git HEAD:main | echo "Nothing to commit"
