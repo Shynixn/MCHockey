@@ -143,4 +143,5 @@ jobs:
           cp -rf /home/runner/work/MCHockey/MCHockey/blockball/docs/wiki/site/* /home/runner/work/MCHockey/MCHockey/docs/wiki/site/
           git add docs
           git commit --message "Automatic CI Documentation." | echo "Nothing to commit"
+          git pull
           git push --quiet https://Shynixn:${{ secrets.GITHUB_TOKEN }}@github.com/Shynixn/MCHockey.git HEAD:main | echo "Nothing to commit"
