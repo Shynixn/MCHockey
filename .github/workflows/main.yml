@@ -139,7 +139,7 @@ jobs:
           mkdocs build
           cd -
           cd -
-          mkdir -p docs/wiki/site
+          mkdir -p /home/runner/work/MCHockey/MCHockey/docs/wiki/site
           cp -rf /home/runner/work/MCHockey/MCHockey/blockball/docs/wiki/site/* /home/runner/work/MCHockey/MCHockey/docs/wiki/site/
           git add docs
           git commit --message "Automatic CI Documentation." | echo "Nothing to commit"
