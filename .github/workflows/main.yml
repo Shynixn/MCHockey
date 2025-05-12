@@ -132,15 +132,15 @@ jobs:
 
       - name: Build Documentation
         run: |
-          rm -rf docs
+          rm -rf docs/wiki/site
           cd blockball
           git config --global user.email "shynixn@email.com" && git config --global user.name "Shynixn CI Actions"        
           cd docs/wiki
           mkdocs build
           cd -
           cd -
-          mkdir -p docs/wiki
-          cp -rf ./blockball/docs/wiki/* ./docs/wiki/
+          mkdir -p docs/wiki/site
+          cp -rf ./blockball/docs/wiki/site/* ./docs/wiki/site/
           git add docs
           git commit --message "Automatic CI Documentation." | echo "Nothing to commit"
           git push --quiet https://Shynixn:${{ secrets.GITHUB_TOKEN }}@github.com/Shynixn/MCHockey.git HEAD:main | echo "Nothing to commit"
