@@ -140,7 +140,7 @@ jobs:
           cd -
           cd -
           mkdir -p docs/wiki/site
-          cp -rf ./blockball/docs/wiki/site/* ./docs/wiki/site/
+          cp -rf /home/runner/work/MCHockey/MCHockey/blockball/docs/wiki/site/* /home/runner/work/MCHockey/MCHockey/docs/wiki/site/
           git add docs
           git commit --message "Automatic CI Documentation." | echo "Nothing to commit"
           git push --quiet https://Shynixn:${{ secrets.GITHUB_TOKEN }}@github.com/Shynixn/MCHockey.git HEAD:main | echo "Nothing to commit"
