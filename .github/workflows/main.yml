@@ -132,6 +132,7 @@ jobs:
 
       - name: Build Documentation
         run: |       
+          rm -rf ./.git
           cd blockball/docs/wiki  
           mkdocs build
           cd /home/runner/work/MCHockey/MCHockey
@@ -143,5 +144,5 @@ jobs:
           cp -rf --verbose /home/runner/work/MCHockey/MCHockey/blockball/docs/wiki/site/* /home/runner/work/MCHockey/MCHockey/tmp/docs/wiki/site/
           git add --verbose .
           pwd && ls
-          git commit --message "Automatic CI Documentation." | echo "Nothing to commit"
-          git push --quiet https://Shynixn:${{ secrets.GITHUB_TOKEN }}@github.com/Shynixn/MCHockey.git HEAD:main | echo "Nothing to commit"
+          git commit --verbose --message "Automatic CI Documentation." | echo "Nothing to commit"
+          git push --verbose --quiet https://Shynixn:${{ secrets.GITHUB_TOKEN }}@github.com/Shynixn/MCHockey.git HEAD:main | echo "Nothing to push"
