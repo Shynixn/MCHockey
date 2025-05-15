@@ -7,7 +7,7 @@ Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 ===================================================================
 diff --git a/src/main/resources/config.yml b/src/main/resources/config.yml
 --- a/src/main/resources/config.yml	(revision 1150f0584a68092a92d9046b8b5e86a3d19d143d)
-+++ b/src/main/resources/config.yml	(date 1746803666287)
++++ b/src/main/resources/config.yml	(date 1747305986587)
 @@ -15,15 +15,12 @@
    blockball:
      aliases:
@@ -24,6 +24,20 @@ diff --git a/src/main/resources/config.yml b/src/main/resources/config.yml
  
  ############################
  # Debug settings
+Index: docs/wiki/docs/api.md
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/docs/wiki/docs/api.md b/docs/wiki/docs/api.md
+--- a/docs/wiki/docs/api.md	(revision 1150f0584a68092a92d9046b8b5e86a3d19d143d)
++++ b/docs/wiki/docs/api.md	(date 1747306012076)
+@@ -31,5 +31,3 @@
+     }
+ }
+ ```
+-
+-BlockBall broadcasts the following [events.](https://github.com/Shynixn/BlockBall/tree/master/src/main/java/com/github/shynixn/blockball/event)
 Index: src/main/java/com/github/shynixn/blockball/impl/commandexecutor/BlockBallCommandExecutor.kt
 IDEA additional info:
 Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
@@ -31,7 +45,7 @@ Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 ===================================================================
 diff --git a/src/main/java/com/github/shynixn/blockball/impl/commandexecutor/BlockBallCommandExecutor.kt b/src/main/java/com/github/shynixn/blockball/impl/commandexecutor/BlockBallCommandExecutor.kt
 --- a/src/main/java/com/github/shynixn/blockball/impl/commandexecutor/BlockBallCommandExecutor.kt	(revision 1150f0584a68092a92d9046b8b5e86a3d19d143d)
-+++ b/src/main/java/com/github/shynixn/blockball/impl/commandexecutor/BlockBallCommandExecutor.kt	(date 1746803711263)
++++ b/src/main/java/com/github/shynixn/blockball/impl/commandexecutor/BlockBallCommandExecutor.kt	(date 1747305986581)
 @@ -662,6 +662,26 @@
          arena.meta.redTeamMeta.armor = mapItemsToColoredSerializedItems(items, "16711680")
          arena.meta.blueTeamMeta.armor = mapItemsToColoredSerializedItems(items, "255")
@@ -59,3 +73,28 @@ diff --git a/src/main/java/com/github/shynixn/blockball/impl/commandexecutor/Blo
  
          arenaRepository.save(arena)
          sender.sendPluginMessage(language.gameCreatedMessage, name)
+Index: docs/wiki/docs/README.md
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/docs/wiki/docs/README.md b/docs/wiki/docs/README.md
+--- a/docs/wiki/docs/README.md	(revision 1150f0584a68092a92d9046b8b5e86a3d19d143d)
++++ b/docs/wiki/docs/README.md	(date 1747306178442)
+@@ -2,8 +2,6 @@
+ 
+ BlockBall is a spigot plugin to play soccer/football games in Minecraft.
+ 
+-Are you looking for the 6.x.x wiki? You can access it via [the WayBackMachine](https://web.archive.org/web/20240811125048/https://shynixn.github.io/BlockBall/build/html/index.html).
+-
+ ## Features
+ 
+ * Adds a new playable soccer/football lobby game or standalone minigame
+@@ -12,7 +10,3 @@
+ * PlaceHolderApi Support
+ * Multiple games per server
+ * Player Stats collecting (Patreon Only)
+-
+-## Installation
+-
+-<iframe width="560" height="315" src="https://www.youtube.com/embed/VPBYYQUaRCs?si=oJf9aM7RWhpXWJ_y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
