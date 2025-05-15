@@ -5,7 +5,7 @@ function Invoke-Name-Patch{
     Get-ChildItem -Path $rootPath -Recurse -File | Where-Object { $extensions -contains $_.Extension } | ForEach-Object {
         $filePath = $_.FullName
         $data = Get-Content -Path $filePath -Raw
-        $data = $data.Replace("blockball", "mchockey").replace("BlockBall", "MCHockey").replace("Soccer", "Hockey").replace("soccer", "hockey")
+        $data = $data.Replace("blockball", "mchockey").replace("BlockBall", "MCHockey").replace("Soccer", "Hockey").replace("soccer", "hockey").replace("/football", "")
         Set-Content -Value $data -Path $filePath
 
         $relativePath = $filePath.Substring($rootPath.Length).TrimStart("\\")
