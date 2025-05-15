@@ -131,17 +131,16 @@ jobs:
           cd -
 
       - name: Build Documentation
-        run: |
-          rm -rf docs/wiki/site
-          cd blockball
-          git config --global user.email "shynixn@email.com" && git config --global user.name "Shynixn CI Actions"        
-          cd docs/wiki
+        run: |       
+          cd blockball/docs/wiki  
           mkdocs build
-          cd -
-          cd -
-          mkdir -p /home/runner/work/MCHockey/MCHockey/docs/wiki/site
-          cp -rf /home/runner/work/MCHockey/MCHockey/blockball/docs/wiki/site/* /home/runner/work/MCHockey/MCHockey/docs/wiki/site/
+          cd /home/runner/work/MCHockey/MCHockey
+          mkdir -p ./tmp && cd ./tmp
+          git clone https://Shynixn:${{ secrets.GITHUB_TOKEN }}@github.com/Shynixn/MCHockey.git HEAD:main
+          git config --global user.email "shynixn@email.com" && git config --global user.name "Shynixn CI Actions"      
+          rm -rf ./docs/wiki/site
+          mkdir -p ./docs/wiki/site
+          cp -rf /home/runner/work/MCHockey/MCHockey/blockball/docs/wiki/site/* /home/runner/work/MCHockey/MCHockey/tmp/docs/wiki/site/
           git add docs
           git commit --message "Automatic CI Documentation." | echo "Nothing to commit"
-          git pull
-          git push --quiet --force https://Shynixn:${{ secrets.GITHUB_TOKEN }}@github.com/Shynixn/MCHockey.git HEAD:main | echo "Nothing to commit"
+          git push --quiet https://Shynixn:${{ secrets.GITHUB_TOKEN }}@github.com/Shynixn/MCHockey.git HEAD:main | echo "Nothing to commit"
