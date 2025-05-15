@@ -136,12 +136,12 @@ jobs:
           mkdocs build
           cd /home/runner/work/MCHockey/MCHockey
           mkdir -p ./tmp && cd ./tmp
-          git clone https://Shynixn:${{ secrets.GITHUB_TOKEN }}@github.com/Shynixn/MCHockey.git HEAD:main
+          git clone https://Shynixn:${{ secrets.GITHUB_TOKEN }}@github.com/Shynixn/MCHockey.git
           git config --global user.email "shynixn@email.com" && git config --global user.name "Shynixn CI Actions"      
           rm -rf ./docs/wiki/site
           mkdir -p ./docs/wiki/site
           cp -rf --verbose /home/runner/work/MCHockey/MCHockey/blockball/docs/wiki/site/* /home/runner/work/MCHockey/MCHockey/tmp/docs/wiki/site/
-          git add --verbose ./docs
+          git add --verbose .
           pwd && ls
           git commit --message "Automatic CI Documentation." | echo "Nothing to commit"
           git push --quiet https://Shynixn:${{ secrets.GITHUB_TOKEN }}@github.com/Shynixn/MCHockey.git HEAD:main | echo "Nothing to commit"
