@@ -23,6 +23,8 @@ MCHockey is a spigot plugin to play hockey games in Minecraft.
 
 ## Screenshots
 
+![alt tag]([http://www.mediafire.com/convkey/3383/6zhpiiijhk022s5zg.jpg](https://shynixn.github.io/MCHockey/title.png))
+
 # Licence
 
 Take a look into the ``LICENCE`` file for further details.
