@@ -32,3 +32,6 @@ Take a look into the ``LICENCE`` file for further details.
 * Shynixn Plugin Distribution LICENCE
 * GNU GENERAL PUBLIC LICENSE Version 3
 
+
+
+
