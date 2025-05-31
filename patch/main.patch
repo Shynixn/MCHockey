@@ -6,8 +6,8 @@ Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 <+>UTF-8
 ===================================================================
 diff --git a/src/main/resources/config.yml b/src/main/resources/config.yml
---- a/src/main/resources/config.yml	(revision 1150f0584a68092a92d9046b8b5e86a3d19d143d)
-+++ b/src/main/resources/config.yml	(date 1747305986587)
+--- a/src/main/resources/config.yml	(revision dffec243f3b474302c1e88f579d674be957a8762)
++++ b/src/main/resources/config.yml	(date 1748682465362)
 @@ -15,15 +15,12 @@
    blockball:
      aliases:
@@ -30,8 +30,8 @@ Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 <+>UTF-8
 ===================================================================
 diff --git a/docs/wiki/docs/api.md b/docs/wiki/docs/api.md
---- a/docs/wiki/docs/api.md	(revision 1150f0584a68092a92d9046b8b5e86a3d19d143d)
-+++ b/docs/wiki/docs/api.md	(date 1747306012076)
+--- a/docs/wiki/docs/api.md	(revision dffec243f3b474302c1e88f579d674be957a8762)
++++ b/docs/wiki/docs/api.md	(date 1748682465338)
 @@ -31,5 +31,3 @@
      }
  }
@@ -44,23 +44,24 @@ Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 <+>UTF-8
 ===================================================================
 diff --git a/src/main/java/com/github/shynixn/blockball/impl/commandexecutor/BlockBallCommandExecutor.kt b/src/main/java/com/github/shynixn/blockball/impl/commandexecutor/BlockBallCommandExecutor.kt
---- a/src/main/java/com/github/shynixn/blockball/impl/commandexecutor/BlockBallCommandExecutor.kt	(revision 1150f0584a68092a92d9046b8b5e86a3d19d143d)
-+++ b/src/main/java/com/github/shynixn/blockball/impl/commandexecutor/BlockBallCommandExecutor.kt	(date 1747305986581)
-@@ -662,6 +662,26 @@
+--- a/src/main/java/com/github/shynixn/blockball/impl/commandexecutor/BlockBallCommandExecutor.kt	(revision dffec243f3b474302c1e88f579d674be957a8762)
++++ b/src/main/java/com/github/shynixn/blockball/impl/commandexecutor/BlockBallCommandExecutor.kt	(date 1748682766385)
+@@ -662,6 +662,27 @@
          arena.meta.redTeamMeta.armor = mapItemsToColoredSerializedItems(items, "16711680")
          arena.meta.blueTeamMeta.armor = mapItemsToColoredSerializedItems(items, "255")
          arena.meta.refereeTeamMeta.armor = mapItemsToColoredSerializedItems(items, "16777215")
-+        arena.meta.ballMeta.also {
-+            it.size = BallSize.SMALL
-+            it.item.skinBase64 =
++        arena.ball.also {
++            it.render.scale = 0.5
++            it.render.offSetY = -0.2
++            it.render.item.skinBase64 =
 +                "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMmE1MmQ1NzlhZmUyZmRmN2I4ZWNmYTc0NmNkMDE2MTUwZDk2YmViNzUwMDliYjI3MzNhZGUxNWQ0ODdjNDJhMSJ9fX0="
-+            it.kickPassDelay = 0
-+            it.rotating = false
-+            it.enabledInteract = false
-+            it.hitBoxRelocation = -0.2
-+            it.enabledPass = false
-+            it.movementModifier.rollingResistance = 0.04
-+            it.movementModifier.shotPassYVelocityOverwrite = 0.0
++            it.hitbox.leftClickRightClickDelayTicks = 0
++            it.render.rotating = false
++            it.hitbox.touchEnabled = false
++            it.hitbox.offSetY = -0.2
++            it.hitbox.rightClickEnabled = false
++            it.rollingResistance = 0.04
++            it.shotPassYVelocityOverwrite = 0.0
 +            it.soundEffects[BallActionType.ONKICK]!!.pitch = 2.0
 +        }
 +        val hockey = arrayOfNulls<Item?>(36)
@@ -73,14 +74,22 @@ diff --git a/src/main/java/com/github/shynixn/blockball/impl/commandexecutor/Blo
  
          arenaRepository.save(arena)
          sender.sendPluginMessage(language.gameCreatedMessage, name)
+@@ -1145,7 +1166,6 @@
+                         )
+                     )
+                 }
+-
+                 if (arena.meta.redTeamMeta.lobbySpawnpoint != null) {
+                     highLights.add(
+                         AreaHighlight(
 Index: docs/wiki/docs/README.md
 IDEA additional info:
 Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 <+>UTF-8
 ===================================================================
 diff --git a/docs/wiki/docs/README.md b/docs/wiki/docs/README.md
---- a/docs/wiki/docs/README.md	(revision 1150f0584a68092a92d9046b8b5e86a3d19d143d)
-+++ b/docs/wiki/docs/README.md	(date 1747306178442)
+--- a/docs/wiki/docs/README.md	(revision dffec243f3b474302c1e88f579d674be957a8762)
++++ b/docs/wiki/docs/README.md	(date 1748682465345)
 @@ -2,8 +2,6 @@
  
  BlockBall is a spigot plugin to play soccer/football games in Minecraft.
