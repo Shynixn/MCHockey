@@ -6,8 +6,8 @@ Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 <+>UTF-8
 ===================================================================
 diff --git a/docs/wiki/docs/api.md b/docs/wiki/docs/api.md
---- a/docs/wiki/docs/api.md	(revision 105b9daf971b03d9410683829b344a0344d4727d)
-+++ b/docs/wiki/docs/api.md	(date 1752411375496)
+--- a/docs/wiki/docs/api.md	(revision 75abc59f72693b3617e4cd7f2893c81f7e8635de)
++++ b/docs/wiki/docs/api.md	(date 1753292483818)
 @@ -31,5 +31,3 @@
      }
  }
@@ -20,9 +20,9 @@ Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 <+>UTF-8
 ===================================================================
 diff --git a/src/main/resources/config.yml b/src/main/resources/config.yml
---- a/src/main/resources/config.yml	(revision 105b9daf971b03d9410683829b344a0344d4727d)
-+++ b/src/main/resources/config.yml	(date 1752411418227)
-@@ -15,11 +15,9 @@
+--- a/src/main/resources/config.yml	(revision 75abc59f72693b3617e4cd7f2893c81f7e8635de)
++++ b/src/main/resources/config.yml	(date 1753292717207)
+@@ -15,15 +15,12 @@
    blockball:
      aliases:
        - "soccer"
@@ -34,14 +34,18 @@ diff --git a/src/main/resources/config.yml b/src/main/resources/config.yml
    blockballbossbar:
      aliases:
        - "soccerbossbar"
+-      - "footballbossbar"
+   blockballsign:
+     aliases:
+       - "soccersign"
 Index: src/main/java/com/github/shynixn/blockball/entity/ArenaMeta.kt
 IDEA additional info:
 Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 <+>UTF-8
 ===================================================================
 diff --git a/src/main/java/com/github/shynixn/blockball/entity/ArenaMeta.kt b/src/main/java/com/github/shynixn/blockball/entity/ArenaMeta.kt
---- a/src/main/java/com/github/shynixn/blockball/entity/ArenaMeta.kt	(revision 105b9daf971b03d9410683829b344a0344d4727d)
-+++ b/src/main/java/com/github/shynixn/blockball/entity/ArenaMeta.kt	(date 1752411400282)
+--- a/src/main/java/com/github/shynixn/blockball/entity/ArenaMeta.kt	(revision 75abc59f72693b3617e4cd7f2893c81f7e8635de)
++++ b/src/main/java/com/github/shynixn/blockball/entity/ArenaMeta.kt	(date 1753292483850)
 @@ -1,5 +1,9 @@
  package com.github.shynixn.blockball.entity
  
@@ -71,8 +75,8 @@ Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 <+>UTF-8
 ===================================================================
 diff --git a/src/main/java/com/github/shynixn/blockball/entity/CustomizationMeta.kt b/src/main/java/com/github/shynixn/blockball/entity/CustomizationMeta.kt
---- a/src/main/java/com/github/shynixn/blockball/entity/CustomizationMeta.kt	(revision 105b9daf971b03d9410683829b344a0344d4727d)
-+++ b/src/main/java/com/github/shynixn/blockball/entity/CustomizationMeta.kt	(date 1752411400315)
+--- a/src/main/java/com/github/shynixn/blockball/entity/CustomizationMeta.kt	(revision 75abc59f72693b3617e4cd7f2893c81f7e8635de)
++++ b/src/main/java/com/github/shynixn/blockball/entity/CustomizationMeta.kt	(date 1753292483858)
 @@ -20,7 +20,7 @@
      var keepHealthEnabled: Boolean = true
  
@@ -82,45 +86,14 @@ diff --git a/src/main/java/com/github/shynixn/blockball/entity/CustomizationMeta
  
      @Comment("When players queue for a game in gameType=MINIGAME, this is the timeout in seconds how long they can wait.")
      var queueTimeOutSec: Int = 30
-Index: src/main/java/com/github/shynixn/blockball/BlockBallLanguageImpl.kt
-IDEA additional info:
-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
-<+>UTF-8
-===================================================================
-diff --git a/src/main/java/com/github/shynixn/blockball/BlockBallLanguageImpl.kt b/src/main/java/com/github/shynixn/blockball/BlockBallLanguageImpl.kt
---- a/src/main/java/com/github/shynixn/blockball/BlockBallLanguageImpl.kt	(revision 105b9daf971b03d9410683829b344a0344d4727d)
-+++ b/src/main/java/com/github/shynixn/blockball/BlockBallLanguageImpl.kt	(date 1752411080857)
-@@ -120,22 +120,6 @@
- 
-  override var commandGameRuleToolTip = LanguageItem("Sets a gamerule in BlockBall.")
- 
-- override var joinSignLine1 = LanguageItem("&0&l[&f&lBlockBall&0&l]&7")
--
-- override var joinSignLine2 = LanguageItem("%blockball_game_stateDisplayName%")
--
-- override var joinSignLine3 = LanguageItem("%blockball_game_players%/%blockball_game_maxPlayers%")
--
-- override var joinSignLine4 = LanguageItem("")
--
-- override var leaveSignLine1 = LanguageItem("&0&l[&f&lBlockBall&0&l]&7")
--
-- override var leaveSignLine2 = LanguageItem("&fLeave")
--
-- override var leaveSignLine3 = LanguageItem("%blockball_game_players%/%blockball_game_maxPlayers%")
--
-- override var leaveSignLine4 = LanguageItem("")
--
-  override var failedToReloadMessage = LanguageItem("&0&l[&f&lBlockBall&0&l]&7 &cFailed to reload arena %1$1s. Recommended action: &e%2$1s")
- 
-  override var gameIsNotARefereeGame = LanguageItem("&0&l[&f&lBlockBall&0&l]&c This game is not a game where you can use a referee. Convert the game to a referee game first.")
 Index: docs/wiki/docs/README.md
 IDEA additional info:
 Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 <+>UTF-8
 ===================================================================
 diff --git a/docs/wiki/docs/README.md b/docs/wiki/docs/README.md
---- a/docs/wiki/docs/README.md	(revision 105b9daf971b03d9410683829b344a0344d4727d)
-+++ b/docs/wiki/docs/README.md	(date 1752411375505)
+--- a/docs/wiki/docs/README.md	(revision 75abc59f72693b3617e4cd7f2893c81f7e8635de)
++++ b/docs/wiki/docs/README.md	(date 1753292483829)
 @@ -2,8 +2,6 @@
  
  BlockBall is a spigot plugin to play soccer/football games in Minecraft.
@@ -144,8 +117,8 @@ Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 <+>UTF-8
 ===================================================================
 diff --git a/src/main/java/com/github/shynixn/blockball/entity/SoccerBallMeta.kt b/src/main/java/com/github/shynixn/blockball/entity/SoccerBallMeta.kt
---- a/src/main/java/com/github/shynixn/blockball/entity/SoccerBallMeta.kt	(revision 105b9daf971b03d9410683829b344a0344d4727d)
-+++ b/src/main/java/com/github/shynixn/blockball/entity/SoccerBallMeta.kt	(date 1752411400325)
+--- a/src/main/java/com/github/shynixn/blockball/entity/SoccerBallMeta.kt	(revision 75abc59f72693b3617e4cd7f2893c81f7e8635de)
++++ b/src/main/java/com/github/shynixn/blockball/entity/SoccerBallMeta.kt	(date 1753292483873)
 @@ -19,7 +19,7 @@
      var airResistance: Double = 0.001
  
@@ -225,34 +198,3 @@ diff --git a/src/main/java/com/github/shynixn/blockball/entity/SoccerBallMeta.kt
          soundEffects[BallActionType.ONKICK] = soundMetaKick
      }
  }
-Index: src/main/java/com/github/shynixn/blockball/contract/BlockBallLanguage.kt
-IDEA additional info:
-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
-<+>UTF-8
-===================================================================
-diff --git a/src/main/java/com/github/shynixn/blockball/contract/BlockBallLanguage.kt b/src/main/java/com/github/shynixn/blockball/contract/BlockBallLanguage.kt
---- a/src/main/java/com/github/shynixn/blockball/contract/BlockBallLanguage.kt	(revision 105b9daf971b03d9410683829b344a0344d4727d)
-+++ b/src/main/java/com/github/shynixn/blockball/contract/BlockBallLanguage.kt	(date 1752411080855)
-@@ -121,22 +121,6 @@
- 
-   var commandGameRuleToolTip: LanguageItem
- 
--  var joinSignLine1: LanguageItem
--
--  var joinSignLine2: LanguageItem
--
--  var joinSignLine3: LanguageItem
--
--  var joinSignLine4: LanguageItem
--
--  var leaveSignLine1: LanguageItem
--
--  var leaveSignLine2: LanguageItem
--
--  var leaveSignLine3: LanguageItem
--
--  var leaveSignLine4: LanguageItem
--
-   var failedToReloadMessage: LanguageItem
- 
-   var gameIsNotARefereeGame: LanguageItem
