@@ -105,6 +105,17 @@ jobs:
           asset_name: MCHockey-Legacy.jar
           asset_content_type: application/jar
 
+      - name: Upload Folia Release to Github
+        if: "contains(github.event.head_commit.message, '--release') && contains(github.ref, 'main')"
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: /home/runner/work/MCHockey/MCHockey/blockball/build/libs/mchockey-root-${{ env.RELEASE_VERSION }}-premium-folia.jar
+          asset_name: MCHockey-Premium-Folia.jar
+          asset_content_type: application/jar
+
       - name: Geyser Customizations to Github
         if: "contains(github.event.head_commit.message, '--release') && contains(github.ref, 'main')"
         uses: actions/upload-release-asset@v1
