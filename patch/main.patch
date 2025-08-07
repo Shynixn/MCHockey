@@ -1,82 +1,13 @@
 Subject: [PATCH] Patch.
 ---
-Index: docs/wiki/docs/api.md
-IDEA additional info:
-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
-<+>UTF-8
-===================================================================
-diff --git a/docs/wiki/docs/api.md b/docs/wiki/docs/api.md
---- a/docs/wiki/docs/api.md	(revision 75abc59f72693b3617e4cd7f2893c81f7e8635de)
-+++ b/docs/wiki/docs/api.md	(date 1753292483818)
-@@ -31,5 +31,3 @@
-     }
- }
- ```
--
--BlockBall broadcasts the following [events.](https://github.com/Shynixn/BlockBall/tree/master/src/main/java/com/github/shynixn/blockball/event)
-Index: src/main/resources/config.yml
-IDEA additional info:
-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
-<+>UTF-8
-===================================================================
-diff --git a/src/main/resources/config.yml b/src/main/resources/config.yml
---- a/src/main/resources/config.yml	(revision 75abc59f72693b3617e4cd7f2893c81f7e8635de)
-+++ b/src/main/resources/config.yml	(date 1753292717207)
-@@ -15,15 +15,12 @@
-   blockball:
-     aliases:
-       - "soccer"
--      - "football"
-   blockballscoreboard:
-     aliases:
-       - "soccerscoreboard"
--      - "footballscoreboard"
-   blockballbossbar:
-     aliases:
-       - "soccerbossbar"
--      - "footballbossbar"
-   blockballsign:
-     aliases:
-       - "soccersign"
-Index: src/main/java/com/github/shynixn/blockball/entity/ArenaMeta.kt
-IDEA additional info:
-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
-<+>UTF-8
-===================================================================
-diff --git a/src/main/java/com/github/shynixn/blockball/entity/ArenaMeta.kt b/src/main/java/com/github/shynixn/blockball/entity/ArenaMeta.kt
---- a/src/main/java/com/github/shynixn/blockball/entity/ArenaMeta.kt	(revision 75abc59f72693b3617e4cd7f2893c81f7e8635de)
-+++ b/src/main/java/com/github/shynixn/blockball/entity/ArenaMeta.kt	(date 1753292483850)
-@@ -1,5 +1,9 @@
- package com.github.shynixn.blockball.entity
- 
-+import com.github.shynixn.mcutils.common.item.Item
-+import com.github.shynixn.mcutils.common.serializeItem
-+import com.github.shynixn.mcutils.packet.impl.service.ItemServiceImpl
-+
- class ArenaMeta {
-     /** Metadata of the customizing Properties. */
-     val customizingMeta: CustomizationMeta = CustomizationMeta()
-@@ -32,5 +36,12 @@
-         blueTeamMeta.displayName = "&9Team Blue"
-         redTeamMeta.displayName = "&cTeam Red"
-         refereeTeamMeta.displayName = "&fTeam Referee"
-+        val hockey = arrayOfNulls<Item?>(36)
-+        for (i in 0 until 9) {
-+            hockey[i] = Item("minecraft:iron_hoe,292")
-+        }
-+        val itemService = ItemServiceImpl()
-+        redTeamMeta.inventory = hockey.map { e -> itemService.serializeItem(e) }.toTypedArray()
-+        blueTeamMeta.inventory = hockey.map { e -> itemService.serializeItem(e) }.toTypedArray()
-     }
- }
 Index: src/main/java/com/github/shynixn/blockball/entity/CustomizationMeta.kt
 IDEA additional info:
 Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 <+>UTF-8
 ===================================================================
 diff --git a/src/main/java/com/github/shynixn/blockball/entity/CustomizationMeta.kt b/src/main/java/com/github/shynixn/blockball/entity/CustomizationMeta.kt
---- a/src/main/java/com/github/shynixn/blockball/entity/CustomizationMeta.kt	(revision 75abc59f72693b3617e4cd7f2893c81f7e8635de)
-+++ b/src/main/java/com/github/shynixn/blockball/entity/CustomizationMeta.kt	(date 1753292483858)
+--- a/src/main/java/com/github/shynixn/blockball/entity/CustomizationMeta.kt	(revision 52d8abeda8d9b2af3b58c4362f6b5d8179da9b85)
++++ b/src/main/java/com/github/shynixn/blockball/entity/CustomizationMeta.kt	(date 1754589397651)
 @@ -20,7 +20,7 @@
      var keepHealthEnabled: Boolean = true
  
@@ -86,39 +17,28 @@ diff --git a/src/main/java/com/github/shynixn/blockball/entity/CustomizationMeta
  
      @Comment("When players queue for a game in gameType=MINIGAME, this is the timeout in seconds how long they can wait.")
      var queueTimeOutSec: Int = 30
-Index: docs/wiki/docs/README.md
+Index: docs/wiki/docs/api.md
 IDEA additional info:
 Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 <+>UTF-8
 ===================================================================
-diff --git a/docs/wiki/docs/README.md b/docs/wiki/docs/README.md
---- a/docs/wiki/docs/README.md	(revision 75abc59f72693b3617e4cd7f2893c81f7e8635de)
-+++ b/docs/wiki/docs/README.md	(date 1753292483829)
-@@ -2,8 +2,6 @@
- 
- BlockBall is a spigot plugin to play soccer/football games in Minecraft.
- 
--Are you looking for the 6.x.x wiki? You can access it via [the WayBackMachine](https://web.archive.org/web/20240811125048/https://shynixn.github.io/BlockBall/build/html/index.html).
+diff --git a/docs/wiki/docs/api.md b/docs/wiki/docs/api.md
+--- a/docs/wiki/docs/api.md	(revision 52d8abeda8d9b2af3b58c4362f6b5d8179da9b85)
++++ b/docs/wiki/docs/api.md	(date 1754589397610)
+@@ -31,5 +31,3 @@
+     }
+ }
+ ```
 -
- ## Features
- 
- * Adds a new playable soccer/football lobby game or standalone minigame
-@@ -12,7 +10,3 @@
- * PlaceHolderApi Support
- * Multiple games per server
- * Player Stats collecting (Patreon Only)
--
--## Installation
--
--<iframe width="560" height="315" src="https://www.youtube.com/embed/VPBYYQUaRCs?si=oJf9aM7RWhpXWJ_y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+-BlockBall broadcasts the following [events.](https://github.com/Shynixn/BlockBall/tree/master/src/main/java/com/github/shynixn/blockball/event)
 Index: src/main/java/com/github/shynixn/blockball/entity/SoccerBallMeta.kt
 IDEA additional info:
 Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 <+>UTF-8
 ===================================================================
 diff --git a/src/main/java/com/github/shynixn/blockball/entity/SoccerBallMeta.kt b/src/main/java/com/github/shynixn/blockball/entity/SoccerBallMeta.kt
---- a/src/main/java/com/github/shynixn/blockball/entity/SoccerBallMeta.kt	(revision 75abc59f72693b3617e4cd7f2893c81f7e8635de)
-+++ b/src/main/java/com/github/shynixn/blockball/entity/SoccerBallMeta.kt	(date 1753292483873)
+--- a/src/main/java/com/github/shynixn/blockball/entity/SoccerBallMeta.kt	(revision 52d8abeda8d9b2af3b58c4362f6b5d8179da9b85)
++++ b/src/main/java/com/github/shynixn/blockball/entity/SoccerBallMeta.kt	(date 1754589397667)
 @@ -19,7 +19,7 @@
      var airResistance: Double = 0.001
  
@@ -198,3 +118,83 @@ diff --git a/src/main/java/com/github/shynixn/blockball/entity/SoccerBallMeta.kt
          soundEffects[BallActionType.ONKICK] = soundMetaKick
      }
  }
+Index: src/main/java/com/github/shynixn/blockball/entity/ArenaMeta.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/github/shynixn/blockball/entity/ArenaMeta.kt b/src/main/java/com/github/shynixn/blockball/entity/ArenaMeta.kt
+--- a/src/main/java/com/github/shynixn/blockball/entity/ArenaMeta.kt	(revision 52d8abeda8d9b2af3b58c4362f6b5d8179da9b85)
++++ b/src/main/java/com/github/shynixn/blockball/entity/ArenaMeta.kt	(date 1754589397619)
+@@ -1,5 +1,9 @@
+ package com.github.shynixn.blockball.entity
+ 
++import com.github.shynixn.mcutils.common.item.Item
++import com.github.shynixn.mcutils.common.serializeItem
++import com.github.shynixn.mcutils.packet.impl.service.ItemServiceImpl
++
+ class ArenaMeta {
+     /** Metadata of the customizing Properties. */
+     val customizingMeta: CustomizationMeta = CustomizationMeta()
+@@ -32,5 +36,12 @@
+         blueTeamMeta.displayName = "&9Team Blue"
+         redTeamMeta.displayName = "&cTeam Red"
+         refereeTeamMeta.displayName = "&fTeam Referee"
++        val hockey = arrayOfNulls<Item?>(36)
++        for (i in 0 until 9) {
++            hockey[i] = Item("minecraft:iron_hoe,292")
++        }
++        val itemService = ItemServiceImpl()
++        redTeamMeta.inventory = hockey.map { e -> itemService.serializeItem(e) }.toTypedArray()
++        blueTeamMeta.inventory = hockey.map { e -> itemService.serializeItem(e) }.toTypedArray()
+     }
+ }
+Index: docs/wiki/docs/README.md
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/docs/wiki/docs/README.md b/docs/wiki/docs/README.md
+--- a/docs/wiki/docs/README.md	(revision 52d8abeda8d9b2af3b58c4362f6b5d8179da9b85)
++++ b/docs/wiki/docs/README.md	(date 1754589397619)
+@@ -2,8 +2,6 @@
+ 
+ BlockBall is a spigot plugin to play soccer/football games in Minecraft.
+ 
+-Are you looking for the 6.x.x wiki? You can access it via [the WayBackMachine](https://web.archive.org/web/20240811125048/https://shynixn.github.io/BlockBall/build/html/index.html).
+-
+ ## Features
+ 
+ * Adds a new playable soccer/football lobby game or standalone minigame
+@@ -13,7 +11,3 @@
+ * Bukkit and Folia compatible
+ * Multiple games per server
+ * Player Stats collecting (Patreon Only)
+-
+-## Installation
+-
+-<iframe width="560" height="315" src="https://www.youtube.com/embed/VPBYYQUaRCs?si=oJf9aM7RWhpXWJ_y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+Index: src/main/resources/config.yml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/resources/config.yml b/src/main/resources/config.yml
+--- a/src/main/resources/config.yml	(revision 52d8abeda8d9b2af3b58c4362f6b5d8179da9b85)
++++ b/src/main/resources/config.yml	(date 1754589397683)
+@@ -15,15 +15,12 @@
+   blockball:
+     aliases:
+       - "soccer"
+-      - "football"
+   blockballscoreboard:
+     aliases:
+       - "soccerscoreboard"
+-      - "footballscoreboard"
+   blockballbossbar:
+     aliases:
+       - "soccerbossbar"
+-      - "footballbossbar"
+   blockballsign:
+     aliases:
+       - "soccersign"
