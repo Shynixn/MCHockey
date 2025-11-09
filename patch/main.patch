@@ -6,8 +6,8 @@ Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 <+>UTF-8
 ===================================================================
 diff --git a/src/main/java/com/github/shynixn/blockball/entity/SoccerBallMeta.kt b/src/main/java/com/github/shynixn/blockball/entity/SoccerBallMeta.kt
---- a/src/main/java/com/github/shynixn/blockball/entity/SoccerBallMeta.kt	(revision 7bd90dccc28e46f09f116489ee35db618dca8716)
-+++ b/src/main/java/com/github/shynixn/blockball/entity/SoccerBallMeta.kt	(date 1759565119276)
+--- a/src/main/java/com/github/shynixn/blockball/entity/SoccerBallMeta.kt	(revision 4b1b20e3c4fd404afd123515ccd8ee6d6a4a9aeb)
++++ b/src/main/java/com/github/shynixn/blockball/entity/SoccerBallMeta.kt	(date 1762699190689)
 @@ -19,7 +19,7 @@
      var airResistance: Double = 0.001
  
@@ -53,7 +53,7 @@ diff --git a/src/main/java/com/github/shynixn/blockball/entity/SoccerBallMeta.kt
  
          @Comment("Amount of ticks until the ball can intercept interaction by the same player again.")
          var interactionCoolDownPerPlayerTicks: Int = 7
-@@ -85,28 +85,28 @@
+@@ -85,21 +85,21 @@
  
      class SoccerBallRenderMeta {
          @Comment("Size of the rendered ball. These days you can set an arbitrary size. In older Minecraft versions, this version only supported 1.0 (STANDARD) and 0.5 (SMALL). ")
@@ -79,22 +79,14 @@ diff --git a/src/main/java/com/github/shynixn/blockball/entity/SoccerBallMeta.kt
      }
  
      init {
-         val soundMetaKick = SoundMeta()
-         soundMetaKick.name = "ENTITY_ZOMBIE_ATTACK_WOODEN_DOOR,ENTITY_ZOMBIE_ATTACK_DOOR_WOOD,ZOMBIE_WOOD"
-         soundMetaKick.volume = 10.0
--        soundMetaKick.pitch = 1.5
-+        soundMetaKick.pitch = 2.0
-         soundEffects[BallActionType.ONKICK] = soundMetaKick
-     }
- }
 Index: src/main/java/com/github/shynixn/blockball/entity/CustomizationMeta.kt
 IDEA additional info:
 Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 <+>UTF-8
 ===================================================================
 diff --git a/src/main/java/com/github/shynixn/blockball/entity/CustomizationMeta.kt b/src/main/java/com/github/shynixn/blockball/entity/CustomizationMeta.kt
---- a/src/main/java/com/github/shynixn/blockball/entity/CustomizationMeta.kt	(revision 7bd90dccc28e46f09f116489ee35db618dca8716)
-+++ b/src/main/java/com/github/shynixn/blockball/entity/CustomizationMeta.kt	(date 1759565119270)
+--- a/src/main/java/com/github/shynixn/blockball/entity/CustomizationMeta.kt	(revision 4b1b20e3c4fd404afd123515ccd8ee6d6a4a9aeb)
++++ b/src/main/java/com/github/shynixn/blockball/entity/CustomizationMeta.kt	(date 1762699140961)
 @@ -20,7 +20,7 @@
      var keepHealthEnabled: Boolean = true
  
@@ -110,8 +102,8 @@ Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 <+>UTF-8
 ===================================================================
 diff --git a/src/main/resources/config.yml b/src/main/resources/config.yml
---- a/src/main/resources/config.yml	(revision 7bd90dccc28e46f09f116489ee35db618dca8716)
-+++ b/src/main/resources/config.yml	(date 1759565119283)
+--- a/src/main/resources/config.yml	(revision 4b1b20e3c4fd404afd123515ccd8ee6d6a4a9aeb)
++++ b/src/main/resources/config.yml	(date 1762699190706)
 @@ -15,15 +15,12 @@
    blockball:
      aliases:
@@ -134,8 +126,8 @@ Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 <+>UTF-8
 ===================================================================
 diff --git a/src/main/java/com/github/shynixn/blockball/entity/ArenaMeta.kt b/src/main/java/com/github/shynixn/blockball/entity/ArenaMeta.kt
---- a/src/main/java/com/github/shynixn/blockball/entity/ArenaMeta.kt	(revision 7bd90dccc28e46f09f116489ee35db618dca8716)
-+++ b/src/main/java/com/github/shynixn/blockball/entity/ArenaMeta.kt	(date 1759565119248)
+--- a/src/main/java/com/github/shynixn/blockball/entity/ArenaMeta.kt	(revision 4b1b20e3c4fd404afd123515ccd8ee6d6a4a9aeb)
++++ b/src/main/java/com/github/shynixn/blockball/entity/ArenaMeta.kt	(date 1762699140945)
 @@ -1,5 +1,9 @@
  package com.github.shynixn.blockball.entity
  
