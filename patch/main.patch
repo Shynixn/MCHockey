@@ -6,8 +6,8 @@ Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 <+>UTF-8
 ===================================================================
 diff --git a/src/main/java/com/github/shynixn/blockball/entity/SoccerBallMeta.kt b/src/main/java/com/github/shynixn/blockball/entity/SoccerBallMeta.kt
---- a/src/main/java/com/github/shynixn/blockball/entity/SoccerBallMeta.kt	(revision 4b1b20e3c4fd404afd123515ccd8ee6d6a4a9aeb)
-+++ b/src/main/java/com/github/shynixn/blockball/entity/SoccerBallMeta.kt	(date 1762699190689)
+--- a/src/main/java/com/github/shynixn/blockball/entity/SoccerBallMeta.kt	(revision 395bd6267f642196cc1965bf6bb7d7555247b149)
++++ b/src/main/java/com/github/shynixn/blockball/entity/SoccerBallMeta.kt	(date 1770146392407)
 @@ -19,7 +19,7 @@
      var airResistance: Double = 0.001
  
@@ -79,31 +79,14 @@ diff --git a/src/main/java/com/github/shynixn/blockball/entity/SoccerBallMeta.kt
      }
  
      init {
-Index: src/main/java/com/github/shynixn/blockball/entity/CustomizationMeta.kt
-IDEA additional info:
-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
-<+>UTF-8
-===================================================================
-diff --git a/src/main/java/com/github/shynixn/blockball/entity/CustomizationMeta.kt b/src/main/java/com/github/shynixn/blockball/entity/CustomizationMeta.kt
---- a/src/main/java/com/github/shynixn/blockball/entity/CustomizationMeta.kt	(revision 4b1b20e3c4fd404afd123515ccd8ee6d6a4a9aeb)
-+++ b/src/main/java/com/github/shynixn/blockball/entity/CustomizationMeta.kt	(date 1762699140961)
-@@ -20,7 +20,7 @@
-     var keepHealthEnabled: Boolean = true
- 
-     @Comment("If set to true, the goal size is allowed to by very tiny. If set to false, the goal size has to be a minimum size.")
--    var ignoreGoalSize: Boolean = false
-+    var ignoreGoalSize: Boolean = true
- 
-     @Comment("When players queue for a game in gameType=MINIGAME, this is the timeout in seconds how long they can wait.")
-     var queueTimeOutSec: Int = 30
 Index: src/main/resources/config.yml
 IDEA additional info:
 Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 <+>UTF-8
 ===================================================================
 diff --git a/src/main/resources/config.yml b/src/main/resources/config.yml
---- a/src/main/resources/config.yml	(revision 4b1b20e3c4fd404afd123515ccd8ee6d6a4a9aeb)
-+++ b/src/main/resources/config.yml	(date 1762699190706)
+--- a/src/main/resources/config.yml	(revision 395bd6267f642196cc1965bf6bb7d7555247b149)
++++ b/src/main/resources/config.yml	(date 1770146392418)
 @@ -15,15 +15,12 @@
    blockball:
      aliases:
@@ -120,25 +103,43 @@ diff --git a/src/main/resources/config.yml b/src/main/resources/config.yml
    blockballsign:
      aliases:
        - "soccersign"
+Index: src/main/java/com/github/shynixn/blockball/entity/CustomizationMeta.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/github/shynixn/blockball/entity/CustomizationMeta.kt b/src/main/java/com/github/shynixn/blockball/entity/CustomizationMeta.kt
+--- a/src/main/java/com/github/shynixn/blockball/entity/CustomizationMeta.kt	(revision 395bd6267f642196cc1965bf6bb7d7555247b149)
++++ b/src/main/java/com/github/shynixn/blockball/entity/CustomizationMeta.kt	(date 1770146392394)
+@@ -20,7 +20,7 @@
+     var keepHealthEnabled: Boolean = true
+ 
+     @Comment("If set to true, the goal size is allowed to by very tiny. If set to false, the goal size has to be a minimum size.")
+-    var ignoreGoalSize: Boolean = false
++    var ignoreGoalSize: Boolean = true
+ 
+     @Comment("When players queue for a game in gameType=MINIGAME, this is the timeout in seconds how long they can wait.")
+     var queueTimeOutSec: Int = 30
 Index: src/main/java/com/github/shynixn/blockball/entity/ArenaMeta.kt
 IDEA additional info:
 Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 <+>UTF-8
 ===================================================================
 diff --git a/src/main/java/com/github/shynixn/blockball/entity/ArenaMeta.kt b/src/main/java/com/github/shynixn/blockball/entity/ArenaMeta.kt
---- a/src/main/java/com/github/shynixn/blockball/entity/ArenaMeta.kt	(revision 4b1b20e3c4fd404afd123515ccd8ee6d6a4a9aeb)
-+++ b/src/main/java/com/github/shynixn/blockball/entity/ArenaMeta.kt	(date 1762699140945)
-@@ -1,5 +1,9 @@
- package com.github.shynixn.blockball.entity
+--- a/src/main/java/com/github/shynixn/blockball/entity/ArenaMeta.kt	(revision 395bd6267f642196cc1965bf6bb7d7555247b149)
++++ b/src/main/java/com/github/shynixn/blockball/entity/ArenaMeta.kt	(date 1770146392375)
+@@ -2,6 +2,10 @@
+ 
+ import com.github.shynixn.blockball.entity.cloud.CloudMeta
  
 +import com.github.shynixn.mcutils.common.item.Item
 +import com.github.shynixn.mcutils.common.serializeItem
 +import com.github.shynixn.mcutils.packet.impl.service.ItemServiceImpl
 +
  class ArenaMeta {
-     /** Metadata of the customizing Properties. */
+     /** Metadata of the customizing properties. */
      val customizingMeta: CustomizationMeta = CustomizationMeta()
-@@ -32,5 +36,12 @@
+@@ -37,5 +41,12 @@
          blueTeamMeta.displayName = "&9Team Blue"
          redTeamMeta.displayName = "&cTeam Red"
          refereeTeamMeta.displayName = "&fTeam Referee"
