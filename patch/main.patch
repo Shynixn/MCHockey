@@ -205,7 +205,7 @@ Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 ===================================================================
 diff --git a/src/main/java/com/github/shynixn/blockball/entity/SoccerBallMeta.kt b/src/main/java/com/github/shynixn/blockball/entity/SoccerBallMeta.kt
 --- a/src/main/java/com/github/shynixn/blockball/entity/SoccerBallMeta.kt	(revision 162bbebfdbe8b627a2e427bc8bbbf2e2537bcb8e)
-+++ b/src/main/java/com/github/shynixn/blockball/entity/SoccerBallMeta.kt	(date 1774964992847)
++++ b/src/main/java/com/github/shynixn/blockball/entity/SoccerBallMeta.kt	(date 1774981609154)
 @@ -19,7 +19,7 @@
      var airResistance: Double = 0.001
  
@@ -284,7 +284,7 @@ Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 ===================================================================
 diff --git a/docs/wiki/mkdocs.yml b/docs/wiki/mkdocs.yml
 --- a/docs/wiki/mkdocs.yml	(revision 162bbebfdbe8b627a2e427bc8bbbf2e2537bcb8e)
-+++ b/docs/wiki/mkdocs.yml	(date 1774965033427)
++++ b/docs/wiki/mkdocs.yml	(date 1774981609109)
 @@ -16,7 +16,6 @@
        - Referee (Patreon): referee.md
        - Managing Clubs (Patreon): club.md
@@ -300,7 +300,7 @@ Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 ===================================================================
 diff --git a/src/main/resources/config.yml b/src/main/resources/config.yml
 --- a/src/main/resources/config.yml	(revision 162bbebfdbe8b627a2e427bc8bbbf2e2537bcb8e)
-+++ b/src/main/resources/config.yml	(date 1774964992864)
++++ b/src/main/resources/config.yml	(date 1774981609167)
 @@ -15,15 +15,12 @@
    blockball:
      aliases:
@@ -324,19 +324,18 @@ Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 ===================================================================
 diff --git a/src/main/java/com/github/shynixn/blockball/entity/ArenaMeta.kt b/src/main/java/com/github/shynixn/blockball/entity/ArenaMeta.kt
 --- a/src/main/java/com/github/shynixn/blockball/entity/ArenaMeta.kt	(revision 162bbebfdbe8b627a2e427bc8bbbf2e2537bcb8e)
-+++ b/src/main/java/com/github/shynixn/blockball/entity/ArenaMeta.kt	(date 1774964992808)
-@@ -2,6 +2,10 @@
++++ b/src/main/java/com/github/shynixn/blockball/entity/ArenaMeta.kt	(date 1774981644054)
+@@ -2,6 +2,9 @@
  
  import com.github.shynixn.blockball.entity.cloud.CloudMeta
  
 +import com.github.shynixn.mcutils.common.item.Item
-+import com.github.shynixn.mcutils.common.serializeItem
 +import com.github.shynixn.mcutils.packet.impl.service.ItemServiceImpl
 +
  class ArenaMeta {
      /** Metadata of the customizing properties. */
      val customizingMeta: CustomizationMeta = CustomizationMeta()
-@@ -37,5 +41,12 @@
+@@ -37,5 +40,12 @@
          blueTeamMeta.displayName = "&9Team Blue"
          redTeamMeta.displayName = "&cTeam Red"
          refereeTeamMeta.displayName = "&fTeam Referee"
@@ -356,7 +355,7 @@ Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 ===================================================================
 diff --git a/src/main/java/com/github/shynixn/blockball/entity/CustomizationMeta.kt b/src/main/java/com/github/shynixn/blockball/entity/CustomizationMeta.kt
 --- a/src/main/java/com/github/shynixn/blockball/entity/CustomizationMeta.kt	(revision 162bbebfdbe8b627a2e427bc8bbbf2e2537bcb8e)
-+++ b/src/main/java/com/github/shynixn/blockball/entity/CustomizationMeta.kt	(date 1774964992825)
++++ b/src/main/java/com/github/shynixn/blockball/entity/CustomizationMeta.kt	(date 1774981609142)
 @@ -20,7 +20,7 @@
      var keepHealthEnabled: Boolean = true
  
