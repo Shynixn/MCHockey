@@ -5,7 +5,7 @@ permissions:
 
 # Controls when the action will run.
 on:
-  # Triggers the workflow on push or pull request events but only for the master branch
+  # Triggers the workflow on push or pull request events but only for the main branch
   push:
     branches: [ main, development ]
   pull_request:
@@ -73,7 +73,7 @@ jobs:
           prerelease: false
 
       - name: Upload MCHockey-1.8.8-1.16.5-Premium.jar
-        if: "contains(github.event.head_commit.message, '--release') && contains(github.ref, 'master')"
+        if: "contains(github.event.head_commit.message, '--release') && contains(github.ref, 'main')"
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -84,7 +84,7 @@ jobs:
           asset_content_type: application/jar
 
       - name: Upload MCHockey-1.17.0-1.21.11-Premium.jar
-        if: "contains(github.event.head_commit.message, '--release') && contains(github.ref, 'master')"
+        if: "contains(github.event.head_commit.message, '--release') && contains(github.ref, 'main')"
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -95,7 +95,7 @@ jobs:
           asset_content_type: application/jar
 
       - name: Upload MCHockey-1.17.0-1.21.11-Premium-Folia.jar
-        if: "contains(github.event.head_commit.message, '--release') && contains(github.ref, 'master')"
+        if: "contains(github.event.head_commit.message, '--release') && contains(github.ref, 'main')"
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -106,7 +106,7 @@ jobs:
           asset_content_type: application/jar
 
       - name: Upload MCHockey-26.1.0-latest-Premium.jar
-        if: "contains(github.event.head_commit.message, '--release') && contains(github.ref, 'master')"
+        if: "contains(github.event.head_commit.message, '--release') && contains(github.ref, 'main')"
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -117,7 +117,7 @@ jobs:
           asset_content_type: application/jar
 
       - name: Upload MCHockey-26.1.0-latest-Premium-Folia.jar
-        if: "contains(github.event.head_commit.message, '--release') && contains(github.ref, 'master')"
+        if: "contains(github.event.head_commit.message, '--release') && contains(github.ref, 'main')"
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -128,7 +128,7 @@ jobs:
           asset_content_type: application/jar
 
       - name: Upload MCHockey-Free.jar
-        if: "contains(github.event.head_commit.message, '--release') && contains(github.ref, 'master')"
+        if: "contains(github.event.head_commit.message, '--release') && contains(github.ref, 'main')"
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
