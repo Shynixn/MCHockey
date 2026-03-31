@@ -31,7 +31,7 @@ jobs:
         run: |
           sudo apt-get install -y dos2unix 
 
-      - name: Patch MCHockey to MCHockey
+      - name: Patch BlockBall to MCHockey
         run: |
           cp ./patch/main.patch ./blockball/main.patch 
           cp ./patch/rename.ps1 ./blockball/rename.ps1
