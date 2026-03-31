@@ -14,7 +14,6 @@ MCHockey is a spigot plugin to play hockey games in Minecraft.
 
 * Uses blocks as balls in minecraft
 * Games are completely customizable
-* Version support 1.8.R3 - 1.21.R7
 * Bukkit and Folia compatible
 * Check out the [MCHockey-Spigot-Page](https://www.spigotmc.org/resources/125090/) to get more information. 
 
@@ -24,7 +23,7 @@ MCHockey is a spigot plugin to play hockey games in Minecraft.
 
 ## Screenshots
 
-![alt tag](https://shynixn.github.io/MCHockey/title.png)
+![alt](https://shynixn.github.io/MCHockey/title.png)
 
 # Licence
 
