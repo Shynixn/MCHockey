@@ -1,13 +1,211 @@
 Subject: [PATCH] Patch.
 ---
+Index: docs/wiki/docs/cloud.md
+===================================================================
+diff --git a/docs/wiki/docs/cloud.md b/docs/wiki/docs/cloud.md
+deleted file mode 100644
+--- a/docs/wiki/docs/cloud.md	(revision 162bbebfdbe8b627a2e427bc8bbbf2e2537bcb8e)
++++ /dev/null	(revision 162bbebfdbe8b627a2e427bc8bbbf2e2537bcb8e)
+@@ -1,191 +0,0 @@
+-# BlockBall Hub - Cloud Integration (BETA)
+-
+-Share your BlockBall games with the world! The BlockBall Hub is a cloud service that automatically publishes game results and player statistics to a dedicated website.
+-
+-Check out the demo on [https://blockball.shynixn.com](https://blockball.shynixn.com)
+-
+-!!! warning "Patreon Exclusive"
+-    This feature is available exclusively to active Patreon supporters. [Become a patron](https://www.patreon.com/shynixn) to unlock cloud features. This feature is only available as long as you are subscribed.
+-
+-## 🎯 Overview
+-
+-BlockBall Hub allows you to:
+-
+-- **Automatically publish game results** from your Minecraft server to the web
+-- **Track player statistics** with player statistic pages
+-- **Share games publicly** with a personal server page
+-- **Custom domain integration** (Elite & Legendary tiers only)
+-
+-Your BlockBall Hub server is accessible at:
+-```
+-https://blockball.shynixn.com/games?s=<yourserverid>
+-```
+-
+----
+-
+-## 🚀 Setup Guide
+-
+-### Step 1: Register Your Server
+-
+-1. Navigate to [Registration](https://blockball.shynixn.com/info)
+-2. Login with your **Patreon account**
+-3. Complete registration to create your personal server page
+-
+-✅ **Success!** Your unique server URL will be generated automatically.
+-
+-### Step 2: Connect Your Minecraft Server
+-
+-Make sure you have got the following permission
+-
+-```bash
+-blockball.cloud
+-```
+-
+-Link your Minecraft server to your BlockBall Hub account:
+-
+-```bash
+-/blockball cloud login
+-```
+-
+-**What happens next:**
+-
+-- You'll be prompted to authenticate with the **same Patreon account** used during registration
+-- Follow the authentication instructions in chat
+-- Your server will be securely connected to BlockBall Hub
+-
+-!!! tip "Authentication"
+-    Make sure you're using the same Patreon account on both the website and in-game to ensure proper connection.
+-
+-### Step 3: Enable Cloud Publishing for Arenas
+-
+-Enable cloud publishing for individual arenas by editing their configuration files.
+-
+-**File Location:**
+-```
+-/plugins/BlockBall/arena/<arena_name>.yml
+-```
+-
+-**Configuration:**
+-
+-1. Open your arena YAML file in a text editor
+-2. Find the `cloudMeta:` section
+-3. Set `enabled: true`
+-4. Save the file
+-5. Reload the arena: `/blockball reload`
+-
+-**Example Configuration:**
+-```yaml
+-cloudMeta:
+-  enabled: true
+-  # Optional: additional cloud properties
+-```
+-
+-!!! tip "Optional Properties"
+-    The cloud section supports additional configuration options. Check the YAML file for available settings.
+-
+-### Step 4: Play and Publish
+-
+-That's it! Now just play normally:
+-
+-1. **Start a game** on your arena
+-2. **Play through to completion**
+-3. **Results are automatically published** to your BlockBall Hub server
+-4. **A publish link** is sent to you in ingame chat
+-
+----
+-
+-## 📊 Features
+-
+-### Game Publishing
+-
+-Every completed game is automatically uploaded with:
+-
+-- Final scores and match results
+-- Team compositions
+-- Game duration and timing
+-- Arena information
+-
+-### Player Statistics
+-
+-Player performance data is tracked and published:
+-
+-- Player statistics across all games
+-
+-### Public Access
+-
+-Share your BlockBall Hub server URL with:
+-
+-- Players on your server
+-- Your community website
+-- Social media followers
+-- Anyone interested in your server's games
+-
+----
+-
+-## 👑 Premium Features
+-
+-### Custom Domain Integration
+-
+-**Available for:** Elite & Legendary Patreon Tiers
+-
+-Instead of using the default BlockBall Hub URL, integrate the service into your own domain:
+-
+-**Default URL:**
+-```
+-https://blockball.shynixn.com/games?s=<yourserverid>
+-```
+-
+-**Custom Domain:**
+-```
+-https://soccer.yourcustomdomain.com/games
+-```
+-
+-**Benefits:**
+-
+-- Private server configuration
+-- Branded experience matching your server
+-- Professional appearance for your community
+-- Seamless integration with existing website
+-
+-!!! info "Custom Domain Setup"
+-    Contact support through Patreon for assistance with custom domain configuration.
+-
+----
+-
+-## 🔧 Troubleshooting
+-
+-### Game Not Publishing
+-
+-**Check these common issues:**
+-
+-1. **Cloud login status:**  
+-   Run `/blockball cloud login` and verify authentication
+-
+-2. **Arena cloud setting:**  
+-   Ensure `enabled: true` in arena YAML file
+-
+-3. **Game completion:**  
+-   Only completed games are published (not manually stopped)
+-
+-4. **Server connectivity:**  
+-   Check internet connection and firewall settings
+-
+-### Authentication Issues
+-
+-- Verify you're using the **same Patreon account** on both website and server
+-- Check that your Patreon subscription is active. The Basic tier is required
+-- Try logging out and logging in again: `/blockball cloud logout` then `/blockball cloud login`
+-
+-### Statistics Not Updating
+-
+-- Allow a few minutes for statistics to process
+-- Refresh your browser page
+-- Verify the game published successfully on your server page
+-
+----
+-
+-## 📚 Additional Resources
+-
+-- **Patreon:** [Support BlockBall development](https://www.patreon.com/shynixn)
+-- **BlockBall Hub:** [Visit your server page](https://blockball.shynixn.com)
+-- **Terms of Service:** [Terms of Service](https://blockball.shynixn.com/info)
 Index: src/main/java/com/github/shynixn/blockball/entity/SoccerBallMeta.kt
 IDEA additional info:
 Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 <+>UTF-8
 ===================================================================
 diff --git a/src/main/java/com/github/shynixn/blockball/entity/SoccerBallMeta.kt b/src/main/java/com/github/shynixn/blockball/entity/SoccerBallMeta.kt
---- a/src/main/java/com/github/shynixn/blockball/entity/SoccerBallMeta.kt	(revision 395bd6267f642196cc1965bf6bb7d7555247b149)
-+++ b/src/main/java/com/github/shynixn/blockball/entity/SoccerBallMeta.kt	(date 1770146392407)
+--- a/src/main/java/com/github/shynixn/blockball/entity/SoccerBallMeta.kt	(revision 162bbebfdbe8b627a2e427bc8bbbf2e2537bcb8e)
++++ b/src/main/java/com/github/shynixn/blockball/entity/SoccerBallMeta.kt	(date 1774964992847)
 @@ -19,7 +19,7 @@
      var airResistance: Double = 0.001
  
@@ -79,14 +277,30 @@ diff --git a/src/main/java/com/github/shynixn/blockball/entity/SoccerBallMeta.kt
      }
  
      init {
+Index: docs/wiki/mkdocs.yml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/docs/wiki/mkdocs.yml b/docs/wiki/mkdocs.yml
+--- a/docs/wiki/mkdocs.yml	(revision 162bbebfdbe8b627a2e427bc8bbbf2e2537bcb8e)
++++ b/docs/wiki/mkdocs.yml	(date 1774965033427)
+@@ -16,7 +16,6 @@
+       - Referee (Patreon): referee.md
+       - Managing Clubs (Patreon): club.md
+       - Club vs Club Games (Patreon): club-games.md
+-      - Website and Cloud (Patreon): cloud.md
+ theme:
+   name: material
+   features:
 Index: src/main/resources/config.yml
 IDEA additional info:
 Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 <+>UTF-8
 ===================================================================
 diff --git a/src/main/resources/config.yml b/src/main/resources/config.yml
---- a/src/main/resources/config.yml	(revision 395bd6267f642196cc1965bf6bb7d7555247b149)
-+++ b/src/main/resources/config.yml	(date 1770146392418)
+--- a/src/main/resources/config.yml	(revision 162bbebfdbe8b627a2e427bc8bbbf2e2537bcb8e)
++++ b/src/main/resources/config.yml	(date 1774964992864)
 @@ -15,15 +15,12 @@
    blockball:
      aliases:
@@ -103,31 +317,14 @@ diff --git a/src/main/resources/config.yml b/src/main/resources/config.yml
    blockballsign:
      aliases:
        - "soccersign"
-Index: src/main/java/com/github/shynixn/blockball/entity/CustomizationMeta.kt
-IDEA additional info:
-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
-<+>UTF-8
-===================================================================
-diff --git a/src/main/java/com/github/shynixn/blockball/entity/CustomizationMeta.kt b/src/main/java/com/github/shynixn/blockball/entity/CustomizationMeta.kt
---- a/src/main/java/com/github/shynixn/blockball/entity/CustomizationMeta.kt	(revision 395bd6267f642196cc1965bf6bb7d7555247b149)
-+++ b/src/main/java/com/github/shynixn/blockball/entity/CustomizationMeta.kt	(date 1770146392394)
-@@ -20,7 +20,7 @@
-     var keepHealthEnabled: Boolean = true
- 
-     @Comment("If set to true, the goal size is allowed to by very tiny. If set to false, the goal size has to be a minimum size.")
--    var ignoreGoalSize: Boolean = false
-+    var ignoreGoalSize: Boolean = true
- 
-     @Comment("When players queue for a game in gameType=MINIGAME, this is the timeout in seconds how long they can wait.")
-     var queueTimeOutSec: Int = 30
 Index: src/main/java/com/github/shynixn/blockball/entity/ArenaMeta.kt
 IDEA additional info:
 Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 <+>UTF-8
 ===================================================================
 diff --git a/src/main/java/com/github/shynixn/blockball/entity/ArenaMeta.kt b/src/main/java/com/github/shynixn/blockball/entity/ArenaMeta.kt
---- a/src/main/java/com/github/shynixn/blockball/entity/ArenaMeta.kt	(revision 395bd6267f642196cc1965bf6bb7d7555247b149)
-+++ b/src/main/java/com/github/shynixn/blockball/entity/ArenaMeta.kt	(date 1770146392375)
+--- a/src/main/java/com/github/shynixn/blockball/entity/ArenaMeta.kt	(revision 162bbebfdbe8b627a2e427bc8bbbf2e2537bcb8e)
++++ b/src/main/java/com/github/shynixn/blockball/entity/ArenaMeta.kt	(date 1774964992808)
 @@ -2,6 +2,10 @@
  
  import com.github.shynixn.blockball.entity.cloud.CloudMeta
@@ -152,3 +349,20 @@ diff --git a/src/main/java/com/github/shynixn/blockball/entity/ArenaMeta.kt b/sr
 +        blueTeamMeta.inventory = hockey.map { e -> itemService.serializeItem(e) }.toTypedArray()
      }
  }
+Index: src/main/java/com/github/shynixn/blockball/entity/CustomizationMeta.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/github/shynixn/blockball/entity/CustomizationMeta.kt b/src/main/java/com/github/shynixn/blockball/entity/CustomizationMeta.kt
+--- a/src/main/java/com/github/shynixn/blockball/entity/CustomizationMeta.kt	(revision 162bbebfdbe8b627a2e427bc8bbbf2e2537bcb8e)
++++ b/src/main/java/com/github/shynixn/blockball/entity/CustomizationMeta.kt	(date 1774964992825)
+@@ -20,7 +20,7 @@
+     var keepHealthEnabled: Boolean = true
+ 
+     @Comment("If set to true, the goal size is allowed to by very tiny. If set to false, the goal size has to be a minimum size.")
+-    var ignoreGoalSize: Boolean = false
++    var ignoreGoalSize: Boolean = true
+ 
+     @Comment("When players queue for a game in gameType=MINIGAME, this is the timeout in seconds how long they can wait.")
+     var queueTimeOutSec: Int = 30
