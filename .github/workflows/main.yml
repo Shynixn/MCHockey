@@ -135,7 +135,7 @@ jobs:
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: /home/runner/work/MCHockey/MCHockey/blockball/build/libs/mchockey-${{ env.RELEASE_VERSION }}-26.1.0-latest-free.jar
-          asset_name: MCHockey-Free.jar
+          asset_name: MCHockey.jar
           asset_content_type: application/jar
           
       - name: Geyser Customizations to Github
