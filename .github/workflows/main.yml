@@ -121,8 +121,9 @@ jobs:
         run: |
           wget -O papoa https://github.com/Shynixn/PatreonPostApi/releases/latest/download/papoa-linux-x64
           chmod +x papoa
+          mv MCHockey.zip MCHockey-GeyserMC.zip
           ./papoa post create \
-            --title "MCHockey for Folia v${{ env.RELEASE_VERSION }} (1.8.9-26.1.2)" \
+            --title "MCHockey for Folia v${{ env.RELEASE_VERSION }} (1.8.9-26.2)" \
             --content "$RELEASE_PATREON_ELITE" \
             --content-format text/markdown \
             --tier-name "Elite" \
@@ -140,7 +141,7 @@ jobs:
             --attachment-file-name "MCHockey-1.17.0-1.21.11-Premium-Folia.jar" \
             --password "$PAPOA_PASSWORD"
           ./papoa post create \
-            --title "MCHockey v${{ env.RELEASE_VERSION }} (1.8.9-26.1.2)" \
+            --title "MCHockey v${{ env.RELEASE_VERSION }} (1.8.9-26.2)" \
             --content "$RELEASE_PATREON_BASIC" \
             --content-format text/markdown \
             --tier-name "Basic" \
@@ -154,7 +155,7 @@ jobs:
             --file ./MCHockey-1.8.8-1.16.5-Premium.jar \
             --file ./MCHockey-1.17.0-1.21.11-Premium.jar \
             --file ./MCHockey-26.1.0-latest-Premium.jar \
-            --file ./MCHockey.zip \
+            --file ./MCHockey-GeyserMC.zip \
             --file /home/runner/work/MCHockey/MCHockey/docs/title.png \
             --photo-attachment-file-name "title.png" \
             --attachment-file-name "MCHockey-1.8.8-1.16.5-Premium.jar" \
