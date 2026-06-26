@@ -154,11 +154,13 @@ jobs:
             --file ./MCHockey-1.8.8-1.16.5-Premium.jar \
             --file ./MCHockey-1.17.0-1.21.11-Premium.jar \
             --file ./MCHockey-26.1.0-latest-Premium.jar \
+            --file ./MCHockey-GeyserMC.zip \
             --file /home/runner/work/MCHockey/MCHockey/docs/title.png \
             --photo-attachment-file-name "title.png" \
             --attachment-file-name "MCHockey-1.8.8-1.16.5-Premium.jar" \
             --attachment-file-name "MCHockey-1.17.0-1.21.11-Premium.jar" \
             --attachment-file-name "MCHockey-26.1.0-latest-Premium.jar" \
+            --attachment-file-name "MCHockey-GeyserMC.zip" \
             --password "$PAPOA_PASSWORD"
 
   Wiki:
