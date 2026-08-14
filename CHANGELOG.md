@@ -1,5 +1,19 @@
 # Changelog
 
+## Release 7.44.1
+
+### Changes
+
+* Shynixn/BlockBall#757 Added a new property to the ball file called dribblingWhileGrabbedEnabled, which plays a dribble animation while a player is moving while grabbing a puck if enabled. This allows to setup games similar to BasketBall.
+* Shynixn/BlockBall#757 Improved display of the puck in inventory while grabbing a puck.
+* Shynixn/BlockBall#755 Changed the puck wiki page to reflect the new changes.
+* Shynixn/BlockBall#755 Readded camera-based steering to the engine. You can now configure per interaction type if the player can control the pitch and spin of the puck by moving their camera after shooting it.
+### Bugs/Issues
+
+* Shynixn/BlockBall#760 Fixed puck glitches in Minecraft version 1.8.8 - 1.13.0
+
+---
+
 ## Release 7.42.0
 
 ### Changes
