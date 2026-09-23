@@ -1,7 +1,7 @@
 
 ### MCHockey (Premium)
 
-* For Minecraft 1.8.9 - 26.2
+* For Minecraft 1.8.9 - 26.3
 * Bedrock GeyserMC resource pack (skin for bedrock servers)
 * Stats tracking (Amount of Goals, WinRate, etc.)
 * Supports Folia
@@ -11,5 +11,5 @@
 
 ### MCHockey (Free)
 
-* For Minecraft 26.2 (the free version only supports the latest Minecraft version)
+* For Minecraft 26.3 (the free version only supports the latest Minecraft version)
 * Download: [MCHockey.jar](https://github.com/Shynixn/MCHockey/releases/download/<version>/MCHockey.jar)
