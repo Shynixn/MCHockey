@@ -1,5 +1,7 @@
 # Changelog
 
+## Release 7.47.0
+
 ### Changes
 
 * Shynixn/BlockBall#742 Added a way to spawn balls outside of games. Check out the [new wiki page](https://shynixn.github.io/MCHockey/wiki/site/spawns/) to find out how the spawns feature works.
@@ -10,7 +12,7 @@
 
 ---
 
-## Release 7.46.0
+## Release 7.46.0   
 
 ### Changes
 
